@@ -28,4 +28,40 @@ describe ('Thermostat', () => {
     }
     expect(thermostat.getCurrentTemperature()).toEqual(10);
   })
+
+  it('has power saving mode by default', () => {
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  })
+
+  it('can switch PSM off', () => {
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+  })
+
+  it('can swich PSM back on', () => {
+    thermostat.switchPowerSavingModeOff();
+    expect(thermostat.isPowerSavingModeOn()).toBe(false);
+    thermostat.switchPowerSavingModeOn();
+    expect(thermostat.isPowerSavingModeOn()).toBe(true);
+  })
+
+  describe('when power saving mode is on', () => {
+    it('has a maxmum tempreture of 25 degrees', () => {
+      for (let i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.getCurrentTemperature()).toEqual(25);
+    })
+  })
+
+  describe('when power saving mode is off', () => {
+    it('has a maximym tempreture of 32 degrees', () => {
+      thermostat.switchPowerSavingModeOff();
+      for(let i = 0; i < 13; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.getCurrentTemperature()).toEqual(32);
+    })
+  })
+
 });
