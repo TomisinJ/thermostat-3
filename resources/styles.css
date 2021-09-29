@@ -1,0 +1,38 @@
+*{
+	margin:0;
+	color: aliceblue;
+}
+body{
+	background: linear-gradient(180deg, #F84545 0%, #4BA3F3 100%);
+	background-repeat: no-repeat;
+	height:100%;
+}
+.container{
+	padding:2%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.thermo-circle{
+	display: grid;
+	grid-template-rows: 1fr 2fr 1fr;
+	margin: 50px;
+	border: 2px solid;
+	border-radius: 50%;
+	width: 400px;
+	height: 400px;
+	justify-content: center;
+	align-items: center;
+}
+.row1{
+	grid-row: 1/2;
+}
+.row2{
+	grid-row: 2/3;
+}
+.row3{
+	grid-row: 3/4;
+}
