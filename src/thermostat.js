@@ -12,20 +12,36 @@ class Thermostat {
   getCurrentTemperature() {
     return this.temperature;
   }
+
   up() {
-    if (this.isMinimumTempreature()) {
+    if (this.isMaximumTemperature()) {
       return;
     }
     this.temperature += 1
   }
+
   down() {
-    if (this.isMinimumTempreature()) {
+    if (this.isMinimumTemperature()) {
       return;
     }
-    this.temperature -= 1
+    this.temperature -= 1;
+  }
+
+  resetTemperature() {
+    this.temperature = 20;
+  }
+
+  checkEnergyUsage() {
+    if (this.temperature < 18 ) {
+      return 'Low Usage' 
+    } else if (this.temperature <= 25 ) {
+      return 'Medium Usage'
+    } else {
+      return 'High Usage'
+    }
   }
   
-  isMinimumTempreature() {
+  isMinimumTemperature() {
     return this.temperature === this.MINIMUM_TEMPERATURE;
   }
 
@@ -41,7 +57,7 @@ class Thermostat {
     this.powerSavingMode = true; 
   }
 
-  isMaximumTempreature() {
+  isMaximumTemperature() {
     if(this.isPowerSavingModeOn() === false) {
       return this.temperature === this.MAX_LIMIT_PSM_OFF;
     }
