@@ -11,6 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
     thermostat.down();
     document.querySelector('.temp-monitor').innerText = thermostat.getCurrentTemperature();
   })
+
+  document.querySelector('#btnReset').addEventListener('click', () => {
+    thermostat.resetTemperature();
+    document.querySelector('.temp-monitor').innerText = thermostat.getCurrentTemperature();
+  })
+
+
+
 });
 
 

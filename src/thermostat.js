@@ -41,10 +41,6 @@ class Thermostat {
     }
   }
   
-  isMinimumTemperature() {
-    return this.temperature === this.MINIMUM_TEMPERATURE;
-  }
-
   isPowerSavingModeOn() {
     return this.powerSavingMode === true;
   }
@@ -55,6 +51,10 @@ class Thermostat {
 
   switchPowerSavingModeOn() {
     this.powerSavingMode = true; 
+  }
+
+  isMinimumTemperature() {
+    return this.temperature === this.MINIMUM_TEMPERATURE;
   }
 
   isMaximumTemperature() {
