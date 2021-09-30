@@ -1,11 +1,13 @@
 *{
 	margin:0;
+	padding: 0;
+	box-sizing: border-box;
 	color: aliceblue;
 }
 body{
 	background: linear-gradient(180deg, #F84545 0%, #4BA3F3 100%);
 	background-repeat: no-repeat;
-	height:100%;
+	height:100vh;
 }
 .container{
 	padding:2%;
@@ -24,15 +26,62 @@ body{
 	border-radius: 50%;
 	width: 400px;
 	height: 400px;
-	justify-content: center;
 	align-items: center;
 }
-.row1{
+.thermo-circle-row1{
 	grid-row: 1/2;
+	justify-self: center;
 }
-.row2{
+.thermo-circle-row2{
 	grid-row: 2/3;
+	display:grid;
+	grid-template-columns: repeat(2,1fr);
+	width:100%;
 }
-.row3{
-	grid-row: 3/4;
+
+.temp-monitor{
+	grid-column: 1/2;
+	width:120px;
+	height:120px;
+	background-color: black;
+	margin:30%;
+	border:2px solid gray;
+}
+.temp-options{
+	grid-column: 2/3;
+	display: grid;
+	grid-template: repeat(4,1fr)/ repeat(8,1fr);
+	align-items: center;
+	justify-items: center;
+}
+.btn {
+  background-color: transparent;
+  border: none; 
+  cursor: pointer; 
+}
+
+i{
+	color: black;
+}
+#btnUp{
+	grid-area: 2 / 2 / span 1 / span 1;
+}
+#btnEnergySave{
+	grid-area: 2 / 4 / span 1 / span 1;
+}
+#btnDown{
+	grid-area: 3 / 2 / span 1 / span 1;
+}
+#btnReset{
+	grid-area: 3 / 4 / span 1 / span 1;
+}
+
+.thermo-circle-row3{
+	justify-self: center;
+}
+.thermo-indicator{
+	width:25px;
+	height: 25px;
+	border-radius: 50%;
+	background: radial-gradient(50% 50% at 50% 50%, #77736C 1.04%, #000000 63.54%);
 }

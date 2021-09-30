@@ -7,14 +7,26 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../resources/styles.css">
+		<script src="https://kit.fontawesome.com/65db07c83e.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div class="container">
-			<h1>Thermostat</h1>
 			<div class="thermo-circle">
-				<div class="row1">hi</div>
-				<div class="row2">look</div>
-				<div class="row3">circle</div>
+				<div class="thermo-circle-row1">
+					<h2>Thermostat</h2>
+				</div>
+				<div class="thermo-circle-row2">
+					<div class="temp-monitor"></div>
+					<div class="temp-options">
+						<button id="btnUp" class="btn"><i class="fas fa-arrow-circle-up fa-2x"></i></button>
+						<button id="btnEnergySave" class="btn"><i class="fas fa-bolt fa-2x"></i></button>
+						<button id="btnDown" class="btn"><i class="fas fa-arrow-circle-down fa-2x"></i></button>
+						<button id="btnReset" class="btn"><i class="fas fa-sync fa-2x"></i></button>
+					</div>
+				</div>
+				<div class="thermo-circle-row3">
+					<div class="thermo-indicator"></div>
+				</div>
 			</div>
 		</div>
 		<script src="/src/thermostat.js" ></script>
