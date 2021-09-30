@@ -33,16 +33,24 @@ class Thermostat {
 
   checkEnergyUsage() {
     if (this.temperature < 18 ) {
-      return 'Low Usage' 
+      return 'low-usage' 
     } else if (this.temperature <= 25 ) {
-      return 'Medium Usage'
+      return 'medium-usage'
     } else {
-      return 'High Usage'
+      return 'high-usage'
     }
   }
   
   isPowerSavingModeOn() {
     return this.powerSavingMode === true;
+  }
+
+  switchPowerSavingMode() {
+    if (this.powerSavingMode === true) {
+      this.switchPowerSavingModeOff();
+    } else {
+      this.switchPowerSavingModeOn();
+    }
   }
 
   switchPowerSavingModeOff() {

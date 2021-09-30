@@ -71,7 +71,7 @@ describe ('Thermostat', () => {
   })
 
   it('check thermostat energy usage', () => {
-    expect(thermostat.checkEnergyUsage()).toEqual('Medium Usage')
+    expect(thermostat.checkEnergyUsage()).toEqual('medium-usage')
   })
 
 });

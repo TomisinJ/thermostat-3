@@ -1,24 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const thermostat = new Thermostat();
-  document.querySelector('.temp-monitor').innerText = thermostat.getCurrentTemperature()
+
+  const updateTemperature = () => {
+    document.querySelector('.temp-monitor').innerText = thermostat.getCurrentTemperature();
+    // document.querySelector('.temp-monitor').className = thermostat.checkEnergyUsage();
+  }
+
+  updateTemperature();
 
   document.querySelector('#btnUp').addEventListener('click', () => {
     thermostat.up();
-    document.querySelector('.temp-monitor').innerText = thermostat.getCurrentTemperature();
+    updateTemperature();
   })
 
   document.querySelector('#btnDown').addEventListener('click', () => {
     thermostat.down();
-    document.querySelector('.temp-monitor').innerText = thermostat.getCurrentTemperature();
+    updateTemperature();
   })
 
   document.querySelector('#btnReset').addEventListener('click', () => {
     thermostat.resetTemperature();
-    document.querySelector('.temp-monitor').innerText = thermostat.getCurrentTemperature();
+    updateTemperature();
   })
 
-
-
+  document.querySelector('#btnEnergySave').addEventListener('click', () => {
+    thermostat.switchPowerSavingMode();
+    updateTemperature();
+  })
 });
 
 
