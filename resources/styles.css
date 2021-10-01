@@ -85,3 +85,15 @@ i{
 	border-radius: 50%;
 	background: radial-gradient(50% 50% at 50% 50%, #77736C 1.04%, #000000 63.54%);
 }
+
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: purple;
+}
+
+.high-usage {
+  color: red;
+}
